@@ -110,13 +110,15 @@
         const min = document.querySelector('.min')
         const sec = document.querySelector('.sec')
         const period = document.querySelector('.period')
+
         setInterval(() => {
             const now = new Date()
             hour.innerText = now.getHours()
             min.innerText = now.getMinutes()
             sec.innerText = now.getSeconds()
-            if (hour >= 12) {
+            if (hour.innerText >= 12) {
                 period.innerText = "PM"
+                console.log(period);
                 hour.innerText - 12
             } else period.innerText = "AM"
             if (hour.innerText < 10) hour.innerText = '0' + hour.innerText
